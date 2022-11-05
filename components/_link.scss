@@ -1,0 +1,25 @@
+.link {
+    --ld-transition: background-size var(--ld-transition-duration) ease, transform var(--ld-transition-duration) ease;
+    --ld-text: var(--ld-blue-500);
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    background-position: right bottom;
+    cursor: pointer;
+
+    &:hover {
+        background-size: 100% 1px;
+        background-position: left bottom;
+    }
+
+    @media not (prefers-reduced-motion) {
+        & {
+            transition: var(--ld-transition);
+        }
+    
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}

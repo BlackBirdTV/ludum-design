@@ -1,0 +1,23 @@
+.glow {
+    --ld-glow-spread: 1rem;
+    --ld-glow-blur: 30px;
+    position: relative;
+    isolation: isolate;
+}
+
+.glow:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    inset: calc(-1 * var(--ld-glow-spread));
+    background: conic-gradient(#ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
+    filter: blur(var(--ld-glow-blur));
+    border-radius: 50%;
+
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

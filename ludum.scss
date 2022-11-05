@@ -1,0 +1,50 @@
+@use 'colors';
+@use 'components';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    --ld-text-dark: var(--ld-dark);
+    --ld-text-light: var(--ld-light);
+    --ld-focus-color: hsl(203 77% 43% / 0.7);
+    --ld-background: var(--ld-light);
+    --ld-transition-duration: 150ms;
+    --ld-text: var(--dark);
+    --ld-padding: 0;
+    --ld-font-size: 1rem;
+    --ld-border: 0;
+    --ld-border-radius: 0;
+    --ld-transition: none;
+
+    background: var(--ld-background);
+    color: var(--ld-text);
+    border: var(--ld-border);
+    padding: var(--ld-padding);
+    font-size: var(--ld-font-size);
+    border-radius: var(--ld-border-radius);
+}
+
+@media not (prefers-reduced-motion) {
+    * {
+        transition: var(--ld-transition);
+    }
+}
+
+html, body {
+    margin: 0;
+    font-size: 1rem;
+}
+
+:focus {
+    outline: 0;
+    box-shadow: 0 0 0 4px var(--ld-focus-color);
+}
+
+:focus:not(:focus-visible) {
+    box-shadow: none;
+}
+
+p {
+    font-size: 1rem;
+}

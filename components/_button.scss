@@ -1,0 +1,78 @@
+.btn {
+    --ld-background: var(--ld-blue-500);
+    --ld-text: var(--ld-text-light);
+    --ld-padding: .5rem 1rem;
+    --ld-border-radius: .5rem;
+    --ld-transition: background var(--ld-transition-duration) ease, transform var(--ld-transition-duration) ease;
+
+    display: inline-block;
+    text-align: center;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &:hover {
+        --ld-background: var(--ld-blue-700);
+    }
+
+    &.outline {
+        border: 1px solid var(--ld-background);
+        background: transparent;
+
+        &:not(:hover) {
+            --ld-text: var(--ld-background);
+        }
+
+    }
+
+    &.outline:hover {
+        border: 1px solid var(--ld-background);
+        background: var(--ld-background);
+    }
+    
+    &.danger {
+        --ld-focus-color: hsl(358 100% 67% / 0.7);
+        --ld-background: var(--ld-red-500);
+    }
+    
+    &.danger:hover {
+        --ld-background: var(--ld-red-700);
+    }
+    
+    &.success {
+        --ld-focus-color: hsl(83 68% 47% / 0.7);
+        --ld-background: var(--ld-green-500);
+    }
+    
+    &.success:hover {
+        --ld-background: var(--ld-green-700);
+    }
+
+    &.warn {
+        --ld-background: var(--ld-yellow-500);
+        --ld-text: var(--ld-text-dark);
+    }
+    
+    &.warn:hover {
+        --ld-background: var(--ld-yellow-700);
+    }
+    
+    &.ghost {
+        --ld-background: transparent;
+        --ld-text: var(--ld-text-dark);
+    }
+    
+    &.ghost:hover {
+        --ld-background: hsl(0 0% 75% / 0.7);
+    }
+}
+
+@media not (prefers-reduced-motion) {
+    .btn {
+        transition: var(--ld-transition);
+    }
+
+    .btn:active {
+        transform: scale(0.9);
+    }
+}
